@@ -24,31 +24,20 @@ void add (float x, float y){
 void imprimir (){
 	ponto *aux_lista = lista_pontos;
 	while(aux_lista != NULL) {
-		printf("%.1f, %.1f", aux_lista->x, aux_lista->y);
+		printf("\n%.1f - %.1f", aux_lista->x, aux_lista->y);
 		aux_lista = aux_lista->prox;
 	}
 }
 
 int main(){
-	float a , b;
-	char parar;
-	
 	setlocale(LC_ALL, "Portuguese");	
 	
-	while(parar != 'N' || parar != 'n'){
-		printf("Digite dois números:\n");
-		scanf("%f", &a);
-		fflush(stdin);
-		scanf("%f", &b);
-		
-		imprimir();
-		
-		printf("Deseja continuar?\nDigite 'N' para parar ou qualquer tecla para continuar!");
-		fflush(stdin);
-		scanf("%c", &parar);
-		
-		system("cls");
-	}
+	add(2, 8);
+	add(3, 6);
+	add(5, 1);
+	add(7, 1);
+
+	imprimir();
 	
 	return 0;
 }
