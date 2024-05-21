@@ -12,14 +12,14 @@ typedef struct Ponto ponto;
 
 ponto *lista_pontos; // Aponta para o primeiro elemento da lista 
 
-int lenght = 0; // Tamanho da lista
+int length = 0; // Tamanho da lista
 
 void addIndex(float x, float y, int index){
 	ponto *p = (ponto*) malloc(sizeof(ponto));
 	p->x = x;
 	p->y = y;
 	
-	if(index > lenght){ // Garante que a posição informada não ultrapasse o tamanho da lista
+	if(index > length){ // Garante que a posição informada não ultrapasse o tamanho da lista
 		printf("Posição inválida!!"); 
 	} 
 	else{
@@ -37,7 +37,7 @@ void addIndex(float x, float y, int index){
 			p->prox = lista_aux->prox; // Aponta para o antigo elemento da posição que reberá a nova struct
 			lista_aux->prox = p; // Elemento anterior passa a apontar para o novo elemento
 		}
-		lenght++; // Incrementa a variável que corresponde ao tamanho da lista 
+		length++; // Incrementa a variável que corresponde ao tamanho da lista 
 	}
 }
 
