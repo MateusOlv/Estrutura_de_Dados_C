@@ -25,19 +25,26 @@ void imprimir(nodo *n){
 	imprimir(n->dir);
 }
 
+void add(nodo *n, int valor){
+	if(valor < n->valor){
+		if(n->esq == NULL) n->esq = create(valor);
+		else add(n->esq, valor);
+	} else{
+		if(n->dir == NULL) n->dir = create(valor);
+		else add(n->dir, valor);
+	}
+}
+
 int main(){
 	
-	nodo *nodo5 = create(5);
-	nodo *nodo2 = create(2);
-	nodo *nodo1 = create(1);
-	nodo *nodo8 = create(8);
-	nodo *nodo4 = create(4);
+	nodo *root = create(5);
 	
-	nodo5->esq = nodo2;
-	nodo2->esq = nodo1;
-	nodo5->dir = nodo8;
-	nodo2->dir = nodo4;
+	add(root, 2);
+	add(root, 1);
+	add(root, 4);
+	add(root, 8);
 	
-	imprimir(nodo5);
+	
+	imprimir(root);
 	return 0;
 }
