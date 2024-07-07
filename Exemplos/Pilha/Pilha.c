@@ -20,7 +20,7 @@ void add(char cor){
 void rem(){
 	if(pilha == NULL){
 		printf("Pilha vazia!");
-	} else pilha = pilha->prox;
+	} else pilha = pilha->prox; 
 }
 
 void imprime(prato *p){
