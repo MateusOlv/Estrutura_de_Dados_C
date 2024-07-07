@@ -17,6 +17,14 @@ nodo* create(int valor){
 	return n;
 }
 
+void imprimir(nodo *n){
+	if(n==NULL) return;
+	imprimir(n->esq);// se a função 'imprimir' for chamada antes do printf a árvore será exibida em ordem crescente (eixo X)
+	printf("%d\n", n->valor);
+	//imprimir(n->esq); --> Se a função 'imprimir' for chamada aq a árvore será exibida na ordem de inserção (eixo Y) 
+	imprimir(n->dir);
+}
+
 int main(){
 	
 	nodo *nodo5 = create(5);
@@ -30,5 +38,6 @@ int main(){
 	nodo5->dir = nodo8;
 	nodo2->dir = nodo4;
 	
+	imprimir(nodo5);
 	return 0;
 }
